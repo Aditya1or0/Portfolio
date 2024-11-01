@@ -1,0 +1,197 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* Reduced from 80px */
+  margin: 80px 170px; /* Adjust bottom margin if needed */
+}
+
+.about-title {
+  position: relative;
+}
+.about-title img{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.about-title h1 {
+  text-align: center;
+  padding: 0 30px;
+  font-size: 80px;
+  font-weight: 600;
+}
+
+.about-sections {
+  display: flex;
+  flex-direction: row;
+  gap: 40px; /* Reduced gap */
+  width: 100%;
+}
+
+.about-left, .about-right {
+  flex: 1;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Reduced for a more compact look */
+}
+
+.about-para {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.about-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-skill {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-skill p {
+  min-width: 150px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.about-skill hr {
+  outline: none;
+  border: none;
+  width: 50%;
+  height: 8px;
+  border-radius: 50px;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 102.06%);
+}
+
+.about-skill:hover {
+  transform: scale(1.05);
+}
+
+/* For small devices (mobile phones) */
+@media (max-width: 600px) {
+  .about {
+    margin: 40px 20px; /* Reduced margins */
+    gap: 20px; /* Reduced gap */
+  }
+
+  .about-title h1 {
+    font-size: 36px; /* Smaller font size */
+    padding: 0 10px; /* Adjusted padding */
+  }
+  .about-title img{
+    width: 80%;
+    right: -30px;
+  }
+
+  .about-sections {
+    flex-direction: column; /* Stack sections vertically */
+  }
+
+  .about-left, .about-right {
+    flex: none; /* Remove flex-grow */
+    width: 100%; /* Full width */
+  }
+
+  .about-para {
+    font-size: 18px; /* Smaller font size */
+  }
+  .about-skill{
+    gap: 20px;
+    align-items: center;
+  }
+
+  .about-skills {
+    gap: 15px;
+    font-size: 10px;
+  }
+  .about-skill p{
+    font-size: 6px;
+  }
+  .about-skill hr{
+    height: 6px;
+  }
+
+  .about-skill p {
+    min-width: 100px; /* Reduced min-width */
+    font-size: 18px; /* Smaller font size */
+  }
+}
+
+/* For medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .about {
+    margin: 60px 40px; /* Adjusted margins */
+    gap: 30px; /* Moderate gap */
+  }
+
+  .about-title h1 {
+    font-size: 48px; /* Adjusted font size */
+  }
+  .about-title img{
+    width: 80%;
+    right: -30px;
+  }
+
+  .about-sections {
+    flex-direction: row; /* Two columns layout */
+  }
+
+  .about-left, .about-right {
+    flex: 1; /* Allow flex-grow */
+  }
+
+  .about-para {
+    font-size: 20px; /* Adjusted font size */
+  }
+
+  .about-skill p {
+    min-width: 120px; /* Adjusted min-width */
+    font-size: 20px; /* Adjusted font size */
+  }
+}
+
+/* For large devices (desktops) */
+@media (min-width: 901px) {
+  .about {
+    margin: 80px 170px; /* Original margins */
+    gap: 40px; /* Original gap */
+  }
+
+  .about-title h1 {
+    font-size: 80px; /* Original font size */
+  }
+
+  .about-sections {
+    gap: 40px; /* Maintain larger gap */
+  }
+
+  .about-para {
+    font-size: 24px; /* Original font size */
+  }
+
+  .about-skill p {
+    min-width: 150px; /* Original min-width */
+    font-size: 24px; /* Original font size */
+  }
+}
+
+
+
+
+
