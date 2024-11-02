@@ -1,6 +1,7 @@
 import React from "react";
 import "./Hero.css";
 import heroimg from "../../assets/heroimg.png";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 const Hero = () => {
   return (
     <div className="hero">
@@ -13,7 +14,9 @@ const Hero = () => {
         responsive websites.{" "}
       </p>
       <div className="hero-action">
-        <div className="hero-connect">Connect with me</div>
+        <AnchorLink className="anchor-link" href="#contact">
+          <div className="hero-connect">Connect with me</div>
+        </AnchorLink>
         <div className="hero-resume">My Resume</div>
       </div>
     </div>
