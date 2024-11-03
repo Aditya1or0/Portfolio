@@ -22,7 +22,7 @@ const mywork_data = [
     w_no: 3,
     w_name: "Chatapp",
     w_img: Chatapp,
-    link: "chat-app-nine-ruby.vercel.app/",
+    link: "https://chat-app-nine-ruby.vercel.app/",
   },
   {
     w_no: 4,
