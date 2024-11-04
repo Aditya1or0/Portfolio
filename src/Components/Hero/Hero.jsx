@@ -4,8 +4,14 @@ import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
 import "./Hero.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const Model = () => {
-  const { scene } = useGLTF("/gaming_laptop.glb"); // Adjust the path as necessary
+const Model = ({ onLoaded }) => {
+  const { scene, isLoading } = useGLTF("/gaming_laptop.glb");
+  useEffect(() => {
+    if (!isLoading) {
+      onLoaded(); // Notify that loading is complete
+    }
+  }, [isLoading, onLoaded]);
+
   const [scale, setScale] = useState(1.5);
   useEffect(() => {
     const handleResize = () => {
@@ -34,8 +40,20 @@ const Model = () => {
 };
 
 const Hero = () => {
+  const [loading, setLoading] = useState(true);
+
+  const handleLoaded = () => {
+    setLoading(false); // Setting loading to false when the model is fully loaded
+  };
   return (
     <div className="hero">
+      {loading && (
+        <div className="loading-screen ">
+          <h2>
+            Loading <span>...</span>
+          </h2>
+        </div>
+      )}
       <Canvas
         style={{ height: "400px", width: "100%" }}
         shadows
@@ -46,8 +64,13 @@ const Hero = () => {
         <pointLight position={[-10, -10, -10]} intensity={0.5} />
         {/* Use a preset environment temporarily for testing */}
         <Environment preset="sunset" /> {/* This uses a built-in preset */}
-        <Model />
-        <OrbitControls enableZoom={false} enablePan={false} />
+        <Model onLoaded={handleLoaded} />
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
       </Canvas>
       <h1>
         <span>Hi, I'm Aditya Sharma</span>
