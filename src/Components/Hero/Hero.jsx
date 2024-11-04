@@ -1,55 +1,54 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
 import "./Hero.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const Model = React.memo(({ onLoaded }) => {
+const Model = ({ onLoaded }) => {
   const { scene, isLoading } = useGLTF("/gaming_laptop.glb");
-
   useEffect(() => {
     if (!isLoading) {
-      onLoaded();
+      onLoaded(); // Notify that loading is complete
     }
   }, [isLoading, onLoaded]);
 
   const [scale, setScale] = useState(1.5);
-
   useEffect(() => {
     const handleResize = () => {
-      setScale(window.innerWidth < 768 ? 0.5 : 1.5);
+      if (window.innerWidth < 768) {
+        setScale(0.5); // Scale down for mobile
+      } else {
+        setScale(1.5); // Scale up for larger screens
+      }
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize();
+    handleResize(); // Call once on mount
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   scene.scale.set(1, 1, 1);
   scene.position.set(0, -0.8, 0);
-
   scene.traverse((child) => {
     if (child.isMesh) {
       child.castShadow = true;
       child.receiveShadow = true;
     }
   });
-
   return <primitive object={scene} />;
-});
+};
 
 const Hero = () => {
   const [loading, setLoading] = useState(true);
 
   const handleLoaded = () => {
-    setLoading(false);
+    setLoading(false); // Setting loading to false when the model is fully loaded
   };
-
   return (
     <div className="hero">
       {loading && (
-        <div className="loading-screen">
+        <div className="loading-screen ">
           <h2>
             Loading <span>...</span>
           </h2>
@@ -63,7 +62,8 @@ const Hero = () => {
         <ambientLight intensity={0.5} />
         <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
         <pointLight position={[-10, -10, -10]} intensity={0.5} />
-        <Environment preset="sunset" />
+        {/* Use a preset environment temporarily for testing */}
+        <Environment preset="sunset" /> {/* This uses a built-in preset */}
         <Model onLoaded={handleLoaded} />
         <OrbitControls
           enableZoom={false}
