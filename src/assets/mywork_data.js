@@ -28,7 +28,7 @@ const mywork_data = [
     w_no: 4,
     w_name: "Vibetube",
     w_img: vibetube,
-    link: "https://vibetube.example.com/",
+    link: "https://vibe-tube-omega.vercel.app",
   },
   {
     w_no: 5,
