@@ -71,7 +71,11 @@
   padding: 20px;
   text-align: center;
 }
-
+.work-overlay h2{
+  background: linear-gradient(267deg ,#da7c25 0.36%, #b923e1 102.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .work-item:hover .work-overlay {
   opacity: 1;
 }
