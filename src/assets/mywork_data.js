@@ -32,7 +32,7 @@ const mywork_data = [
   },
   {
     w_no: 5,
-    w_name: "Picquest",
+    w_name: "ChatBot",
     w_img: chatbot,
     link: "https://aditya1or0.github.io/Chat-Bot/",
   },
