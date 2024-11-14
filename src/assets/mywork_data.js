@@ -20,7 +20,7 @@ const mywork_data = [
   },
   {
     w_no: 3,
-    w_name: "Chat App",
+    w_name: "ChatApp",
     w_img: Chatapp,
     link: "https://chat-app-nine-ruby.vercel.app/",
   },
@@ -38,7 +38,7 @@ const mywork_data = [
   },
   {
     w_no: 6,
-    w_name: "Admin Dashboard",
+    w_name: "AdminDashboard",
     w_img: admindash,
     link: "https://aditya1or0.github.io/Admin-Dashboard/",
   },
