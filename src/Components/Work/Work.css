@@ -1,4 +1,4 @@
-.mywork{
+.mywork {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,10 +6,12 @@
   gap: 80px;
   margin: 80px 170px;
 }
-.mywork a{
+
+.mywork a {
   text-decoration: none;
   color: white;
 }
+
 .mywork-title{
   position: relative;
 }
@@ -24,29 +26,65 @@
   right: 0;
   z-index: -1;
 }
-.mywork-container{
+
+.mywork-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.work-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.work-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 20px;
 }
-.mywork-container img{
-  box-sizing: border-box;
-  object-fit: contain;
-  background-size: cover;
-  z-index: -1;
+
+.work-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
   border-radius: 20px;
-  width: 420px;
-  height: 280px;
-  transition: 0.3s;
-  cursor: pointer;
+  padding: 20px;
+  text-align: center;
 }
-.mywork-container img:hover{
-  transform: scale(1.10);
-  border: 4px solid #ff00ff;
-  border-radius: 10px;
-  transition: 0.3s;
+
+.work-item:hover .work-overlay {
+  opacity: 1;
 }
+
+.work-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.work-description {
+  font-size: 1rem;
+}
+
 .mywork-showmore{
   display: flex;
   align-items: center;
@@ -60,17 +98,18 @@
   transition: 0.6s;
   cursor: pointer;
 }
+
 .mywork-showmore:hover{
   gap: 30px;
   transition: 0.6s;
 }
-@media (max-width:768px) {
-  .mywork{
+
+@media (max-width: 768px) {
+  .mywork {
     gap: 50px;
-    margin: 50px;
-    align-items: start;
+    margin: 50px 20px;
   }
-  .mywork-title h1{
+  .mywork-title h1 {
     padding: 0;
     font-size: 50px;
     font-weight: 600;
@@ -79,15 +118,14 @@
     width: 80%;
     right: -30px;
   }
-  .mywork-container{
+  .mywork-container {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
   .mywork-container img{
     width: 100%;
     height: 100%;
     border-radius: 10px;
-  
   }
   .mywork-showmore{
     padding: 20px 40px;

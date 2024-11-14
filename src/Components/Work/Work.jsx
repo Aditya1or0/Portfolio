@@ -12,27 +12,29 @@ const Work = () => {
         <img src={theme_pattern} alt="" />
       </div>
       <div className="mywork-container">
-        {mywork_data.map((work, index) => {
-          return (
-            <a
-              href={work.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={index}
-            >
-              <img className="work-img" src={work.w_img} alt={work.w_name} />
-            </a>
-          );
-        })}
+        {mywork_data.map((work, index) => (
+          <a
+            href={work.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={index}
+            className="work-item"
+          >
+            <img className="work-img" src={work.w_img} alt={work.w_name} />
+            <div className="work-overlay">
+              <h2 className="work-title">{work.w_name}</h2>
+              <p className="work-description">{work.description}</p>
+            </div>
+          </a>
+        ))}
       </div>
       <a
         href="https://github.com/Aditya1or0?tab=repositories"
         target="_blank"
         rel="noopener noreferrer"
+        className="mywork-showmore"
       >
-        <div className="mywork-showmore">
-          <p>Show More</p> <img src={arrow_icon} alt="" />
-        </div>
+        <p>Show More</p> <img src={arrow_icon} alt="Arrow icon" />
       </a>
     </div>
   );
