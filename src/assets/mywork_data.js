@@ -2,8 +2,8 @@ import Kharidari from "../assets/Kharidari.png";
 import Bgremover from "../assets/Bgremover.png";
 import Chatapp from "../assets/Chatapp.png";
 import vibetube from "../assets/vibetube.png";
-import chatbot from "../assets/chatbot.png";
-import admindash from "../assets/admindash.png";
+import projects from "../assets/projects.png";
+import blogify from "../assets/blogify.png";
 
 const mywork_data = [
   {
@@ -32,15 +32,15 @@ const mywork_data = [
   },
   {
     w_no: 5,
-    w_name: "ChatBot",
-    w_img: chatbot,
-    link: "https://aditya1or0.github.io/Chat-Bot/",
+    w_name: "BlogiFy",
+    w_img: blogify,
+    link: "https://blog-app-beta-three-27.vercel.app/",
   },
   {
     w_no: 6,
-    w_name: "AdminDashboard",
-    w_img: admindash,
-    link: "https://aditya1or0.github.io/Admin-Dashboard/",
+    w_name: "My Projects",
+    w_img: projects,
+    link: "https://my-projects-two.vercel.app/",
   },
 ];
 
